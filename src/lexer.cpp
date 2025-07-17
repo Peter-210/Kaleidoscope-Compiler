@@ -16,12 +16,12 @@ private:
   };
 
   // Filled in when token is "tok_identifier" or "tok_number"
-  std::string IdentiferStr;
-  double NumVal;
+  static std::string IdentiferStr;
+  static double NumVal;
 
 public:
-  int gettok() {
-    int LastChar = ' ';
+  static int gettok() {
+    static int LastChar = ' ';
 
     // Skip whitespace characters
     while (isspace(LastChar)) {

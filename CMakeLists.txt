@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.25)
 project(main)
-file(GLOB SOURCE CONFIGURE_DEPENDS "src/main.cpp")
-add_executable(main ${SOURCE})
+file(GLOB SOURCE CONFIGURE_DEPENDS "src/*.cpp")
+file(GLOB HEADER CONFIGURE_DEPENDS "header/*.hpp")
+add_executable(main ${SOURCE} ${HEADER})
+target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/header)
