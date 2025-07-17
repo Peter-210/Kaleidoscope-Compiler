@@ -1,0 +1,42 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "config-default",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_CXX_STANDARD_REQUIRED": "TRUE"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-default",
+      "configurePreset": "config-default"
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "main",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "config-default"
+        },
+        {
+          "type": "build",
+          "name": "build-default"
+        }
+      ]
+    }
+  ]
+}
