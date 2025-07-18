@@ -1,6 +1,4 @@
 #pragma once
 
-class Lexer {
-public:
-  static int gettok();
-};
+extern double NumVal;
+extern int gettok();
